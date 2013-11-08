@@ -13,7 +13,7 @@ On this week we start refactoring existing code base, and work on providing bett
 
 `77` bugs created and `80` resolved
 
-![Alt chart](/img/2013-11-08-chart.png)
+![Alt chart]({{ site.baseurl }}/img/2013-11-08-chart.png)
 
 # URL saving after log in
 Necessary improvement for not-logged-in users. Now if you read some post or story you don’t need to search it again after login.
