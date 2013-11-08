@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Refactor it!</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
+
+    </head>
+    <body>
+
+        <div class="site">
+          <div class="header">
+            <h1 class="title"><a href="/">Selfish development weekly digest</a></h1>
+          </div>
+
+          <h2>Refactor it!</h2>
+<p class="meta">09 Nov 2013</p>
+
+<div class="post">
+<p>Hi! This is our first demo weekly digest. Here you can follow the newest development progress on working on <code>Selfish</code>. Currently there are only <code>frontend</code> news, but we going to include <code>backend</code> news soon.</p>
+
+<p>On this week we start refactoring existing code base, and work on providing better expirience on <code>Selfish</code> for users. So here the main topics:</p>
+
+<h1>Bug fixing</h1>
+
+<p><code>77</code> bugs created and <code>80</code> resolved</p>
+
+<p><img src="/img/2013-11-08-chart.png" alt="Alt chart"></p>
+
+<h1>URL saving after log in</h1>
+
+<p>Necessary improvement for not-logged-in users. Now if you read some post or story you don’t need to search it again after login.</p>
+
+<h1>Global namespaces for directives</h1>
+
+<p>According to our refactoring plan, we are divided selfish frontend core into modules. One part of it this directive refactor. Now all module directives has it’s own namespaces.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="c1">// Module directive for using in Story Edit module</span>
+<span class="s1">&#39;&lt;div slf-story-edit-cover-gallery&gt;&lt;/div&gt;&#39;</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;story.edit&#39;</span><span class="p">).</span><span class="nx">directive</span><span class="p">(</span><span class="err">‘</span><span class="nx">slfStoryEditCoverGallery</span><span class="err">’</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{});</span>
+
+<span class="c1">// Global directive for universal using</span>
+<span class="s1">&#39;&lt;input type=”text” slf-story-edit-cover-gallery&gt;&#39;</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;common.directives&#39;</span><span class="p">).</span><span class="nx">directive</span><span class="p">(</span><span class="err">‘</span><span class="nx">slfKeypress</span><span class="err">’</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{});</span>
+</code></pre></div>
+
+<p><br /></p>
+
+<h1>Hierarchical model for <code>Profile</code> is extended with <code>Edit Profile</code> and <code>Notifications</code> modules</h1>
+
+<p>As mentioned before this improvement is also accordered to our global module refactoring.</p>
+
+<h1>Friday presentation topic: &quot;Popups system in Selfish.&quot;</h1>
+
+<p>And last, but not least. Beginning this week we decided to start make the presentations each week. Topics for this presentations suggests each team member. For most interesting topics we also decided write posts in the future.</p>
+
+<hr>
+
+<p>Check out <a href="http://test.selfish.frumatic.com">our test server</a> for latest updates. File all bugs/feature requests at <a href="http://jira.frumatic.com/">Jira</a>.</p>
+
+</div>
+
+
+          <div class="footer">
+            <!-- <div class="contact">
+              <p>
+                Your Name<br />
+                What You Are<br />
+                you@example.com
+              </p>
+            </div>
+            <div class="contact">
+              <p>
+                <a href="https://github.com/yourusername">github.com/yourusername</a><br />
+                <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
+              </p>
+            </div> -->
+          </div>
+        </div>
+
+    </body>
+</html>
