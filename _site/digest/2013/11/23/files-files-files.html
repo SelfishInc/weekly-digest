@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="-1" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Files, files, files!</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
+
+    </head>
+    <body>
+
+        <div class="site">
+          <div class="header">
+            <h1 class="title"><a href="/">Selfish development weekly digest</a></h1>
+          </div>
+
+          <h2>Files, files, files!</h2>
+<p class="meta">23 Nov 2013</p>
+
+<div class="post">
+<h1>Justified Gallery on Stash</h1>
+
+<p>Some cool new UI/UX intellectual feature for stash files loading. Just take a look to the screenshots…</p>
+
+<p><img src="http://gyazo.com/000fed22a9c266aefc292967a9fd0663.gif" alt="Alt chart"></p>
+
+<h1>Embedding video from youtube and vimeo</h1>
+
+<p>You can past link to your favourite video from youtube or vimeo right into post body and it will automatically appear in video player.</p>
+
+<h1>Popup refactoring</h1>
+
+<p>For better performance and code quality we refactor directives to unify style and combine it into one directive with different parameters that developers can use directly from <code>Selfish framework</code>.</p>
+
+<h1>File Module Refactoring</h1>
+
+<p>Stash controller refactor by new cache factory, ribbon controller refactor, upload and loading files optimization. Upload popup service improvements.</p>
+
+<h1>Tags on stash improvement</h1>
+
+<p>User can choose multiple tags for filter and all list tags updates after adding it on some file.</p>
+
+<h1>Started Backend Redesign</h1>
+
+<p>Currently components of Selfish backend are strongly coupled by historical reasons due to hot-fix development process. This seriously complicates the development and testing of components, as we have to take into account the behaviour of the associated components, how change will affect them, and often also to make changes in them too. </p>
+
+<p>Due to stabilization of the common requirements, we decided to redesign backend to divide it into the modules, which will communicate with each other only through message bus using publish-subscribe pattern (no more direct messaging). Project will also be divided into the separate modules. </p>
+
+<ul>
+<li>Core module -- Social graph, Stories, Posts, Comments.</li>
+<li>Notification module -- notifications, email sending.</li>
+<li>ACL module -- provide permission management and checking for all other modules * and services.</li>
+<li>Content Recommendation module -- provide recommendations.</li>
+<li>Administration module -- provides API for system management and end user support (moderation).</li>
+<li>Stash service -- file storage will be implemented as a completely separate service, that will provide file storing and processing.</li>
+</ul>
+
+<p>We also decided to migrate from <code>MongoDB</code> to another data storage stack. In most cases it will be <code>Riak</code> + <code>Redis</code>, but several modules can possibly use other databases to achieve required efficiency.</p>
+
+<h1>API Changes</h1>
+
+<p>New requests:</p>
+
+<ul>
+<li>AddViewer — add viewer to user’s story.</li>
+<li>RemoveViewer — remove viewer from user’s story.</li>
+<li>GetViewers — returns all viewers from user’s story.</li>
+<li>GetViewedStories — get all viewed stories.</li>
+<li>SearchProfile — search for some profile.</li>
+<li>GetMCSStories — returns user’s and collaborated stories.</li>
+</ul>
+
+<p>Also SearchQuery request is now accessible for anonymous use.</p>
+
+<h1>Tests</h1>
+
+<p>Primary backend functionality, such as logging in, creating stories and posts, commenting, file uploading, getting notifications, is now covered with a set integrational tests. Recently, they were improved to properly work with the standalone file processing service. </p>
+
+<hr>
+
+<p>Check out <a href="http://test.selfish.frumatic.com">our test server</a> for latest updates. File all bugs/feature requests at <a href="http://jira.frumatic.com/">Jira</a>.</p>
+
+</div>
+
+
+          <div class="footer">
+            <!-- <div class="contact">
+              <p>
+                Your Name<br />
+                What You Are<br />
+                you@example.com
+              </p>
+            </div>
+            <div class="contact">
+              <p>
+                <a href="https://github.com/yourusername">github.com/yourusername</a><br />
+                <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
+              </p>
+            </div> -->
+          </div>
+        </div>
+
+    </body>
+</html>
