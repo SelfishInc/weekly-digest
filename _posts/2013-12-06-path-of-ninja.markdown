@@ -13,7 +13,7 @@ We are ready to demonstrate working prototype of files uploading in parallel wit
 
 # Cache for story 
 
-As in the stash - all story post also cached and saved in browser history for better user expirience. All posts automatically updated every ten seconds to newest state.
+As in the stash - all story post also cached and saved in memory for better user expirience. All story's automatically updated every ten seconds to newest state.
 
 # Popup vertical positioning
 
